@@ -1,10 +1,7 @@
 var buckets = 9;
 var colors = colorbrewer.YlGnBu[buckets];
-var width = 960, height = 430;
+var width = 960, height = 300;
 var gridSize = Math.floor(width/24);
-var days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
-var hours = new Array(24);
-for (var j = 0; j < 24; j++) { hours[j] = j + "h"; }
 
 d3.json("data.json", function(error, json) {
   if (error) return console.warn(error);
@@ -12,7 +9,7 @@ d3.json("data.json", function(error, json) {
   var raw_data = new Array(json._items.length);
   json._items.forEach(function(item) {
     var dt = new Date(item.datetime)
-    raw_data.push({ day: days[dt.getDay()], hour: hours[dt.getHours()] })
+    raw_data.push({ day: dt.getDay(), hour: dt.getHours() })
   });
   console.log(raw_data)
   // sort and count commits into days/hours
@@ -24,23 +21,21 @@ d3.json("data.json", function(error, json) {
   console.log(commits);
   // generate data array of objects {day,hour,value}
   var data = [];
-  for (var i = 0; i < days.length; i++) {
-    for (var j = 0; j < hours.length; j++) {
-      var key = JSON.stringify({ day: days[i], hour: hours[j]})
-      data.push({ day: days[i], hour: hours[j], commits: (commits[key] || 0)})
+  for (var i = 0; i < 7; i++) {
+    for (var j = 0; j < 24; j++) {
+      var key = JSON.stringify({ day: i, hour: j})
+      data.push({ day: i, hour: j, commits: (commits[key] || 0)})
     }
   }
   console.log(data)
+  // start heatmap
   var maxCommits = d3.max(data, function(d){return d.commits;})
-  console.log(maxCommits)
-  //var colorScale = d3.scale.quantile()
-  //.domain([0, buckets-1, maxCommits]).range(colors)
-  //var svg = d3.select("#chart").append("svg")
-  //.attr("width", width).attr("height", height).append("g")
-  //var heatMap = svg.selectAll(".hour")
-  //.data(data).enter().append("rect")
-  //.attr("x", function(d,i){return i*gridSize;})
-  //.attr("y", function(d,i){return i*gridSize;})
-  //.attr("width", gridSize).attr("height", gridSize)
-  //.attr("rx", 4).attr("ry", 4).attr("class", "hour bordered")
+  var colorScale = d3.scale.quantile().domain([0, buckets-1, maxCommits]).range(colors)
+  var svg = d3.select("#chart").append("svg")
+  .attr("width", width).attr("height", height).append("g")
+  var heatMap = svg.selectAll(".hour").data(data).enter().append("rect")
+  .attr("x", function(d){return d.hour*gridSize;})
+  .attr("y", function(d){return d.day*gridSize;})
+  .attr("width", gridSize).attr("height", gridSize)
+  .attr("rx", 4).attr("ry", 4).attr("class", "hour bordered")
 });
