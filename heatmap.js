@@ -3,8 +3,8 @@ var width = 960 - margin.left - margin.right;
 var height = 430 - margin.top - margin.bottom;
 var gridSize = Math.floor(width/24);
 var legendElWidth = gridSize*2;
-var buckets = 7;
-var colors = colorbrewer.Blues[buckets];
+var buckets = 9;
+var colors = colorbrewer.Reds[buckets];
 var days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 var hours = new Array(24);
 for (var j = 0; j < 24; j++) { hours[j] = j + "h"; }
@@ -36,7 +36,7 @@ d3.json("data.json", function(error, json) {
   console.log(data)
   // colorscale and svg
   var maxCommits = d3.max(data, function(d){return d.commits;})
-  var colorScale = d3.scale.quantile().domain([0, buckets-1, maxCommits]).range(colors)
+  var colorScale = d3.scale.quantile().domain([0, maxCommits]).range(colors)
   var svg = d3.select("#chart").append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
