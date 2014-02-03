@@ -70,13 +70,14 @@ d3.json("data.json", function(error, json) {
   // legend
   var legend_data = [0].concat(colorScale.quantiles())
   var legend = svg.selectAll(".legend")
-  .data(legend_data).enter().append("g").attr("class", "legend")
-  .append("rect")
+  .data(legend_data).enter().append("g")
+  .attr("class", "legend")
+  legend.append("rect")
   .attr("x", function(d,i){return legendElWidth*i;})
   .attr("y", height).attr("width", legendElWidth).attr("height", gridSize/2)
   .style("fill", function(d,i){return colors[i];});
-  legend.append("text").style("class", "mono")
-  .text(function(d) { return Math.round(d); })
+  legend.append("text").attr("class", "mono")
+  .text(function(d) { return "≥ " + Math.round(d); })
   .attr("x", function(d, i) { return legendElWidth * i; })
   .attr("y", height + gridSize);
 });
