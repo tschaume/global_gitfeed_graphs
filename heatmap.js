@@ -1,7 +1,13 @@
+var margin = { top: 50, right: 0, bottom: 100, left: 30 };
+var width = 960 - margin.left - margin.right;
+var height = 430 - margin.top - margin.bottom;
+var gridSize = Math.floor(width/24);
+var legendElWidth = gridSize*2;
 var buckets = 9;
 var colors = colorbrewer.YlGnBu[buckets];
-var width = 960, height = 300;
-var gridSize = Math.floor(width/24);
+var days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+var hours = new Array(24);
+for (var j = 0; j < 24; j++) { hours[j] = j + "h"; }
 
 d3.json("data.json", function(error, json) {
   if (error) return console.warn(error);
@@ -28,17 +34,49 @@ d3.json("data.json", function(error, json) {
     }
   }
   console.log(data)
-  // start heatmap
+  // colorscale and svg
   var maxCommits = d3.max(data, function(d){return d.commits;})
   var colorScale = d3.scale.quantile().domain([0, buckets-1, maxCommits]).range(colors)
   var svg = d3.select("#chart").append("svg")
-  .attr("width", width).attr("height", height).append("g")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  // day labels
+  var dayLabels = svg.selectAll(".dayLabel")
+  .data(days).enter().append("text")
+  .text(function(d){return d;}).attr("x",0)
+  .attr("y", function(d,i){return i*gridSize;})
+  .style("text-anchor", "end")
+  .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
+  .attr("class", "dayLabel mono");
+  // hour labels
+  var hourLabels = svg.selectAll(".hourLabel")
+  .data(hours).enter().append("text")
+  .text(function(d){return d;}).attr("y",0)
+  .attr("x", function(d,i){return i*gridSize;})
+  .style("text-anchor", "middle")
+  .attr("transform", "translate(" + gridSize / 2 + ", -6)")
+  .attr("class", "hourLabel mono");
+  // heatmap
   var heatMap = svg.selectAll(".hour").data(data).enter().append("rect")
   .attr("x", function(d){return d.hour*gridSize;})
   .attr("y", function(d){return d.day*gridSize;})
   .attr("width", gridSize).attr("height", gridSize)
   .attr("rx", 4).attr("ry", 4).attr("class", "hour bordered")
-  .style("fill", colors[0]);
-  heatMap.transition().duration(1000)
+  .style("fill", colors[0])
+  .transition().duration(1000)
   .style("fill", function(d){return colorScale(d.commits);});
+  // legend
+  var legend_data = [0].concat(colorScale.quantiles())
+  var legend = svg.selectAll(".legend")
+  .data(legend_data).enter().append("g").attr("class", "legend")
+  .append("rect")
+  .attr("x", function(d,i){return legendElWidth*i;})
+  .attr("y", height).attr("width", legendElWidth).attr("height", gridSize/2)
+  .style("fill", function(d,i){return colors[i];});
+  legend.append("text").style("class", "mono")
+  .text(function(d) { return Math.round(d); })
+  .attr("x", function(d, i) { return legendElWidth * i; })
+  .attr("y", height + gridSize);
 });
