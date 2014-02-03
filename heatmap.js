@@ -38,4 +38,7 @@ d3.json("data.json", function(error, json) {
   .attr("y", function(d){return d.day*gridSize;})
   .attr("width", gridSize).attr("height", gridSize)
   .attr("rx", 4).attr("ry", 4).attr("class", "hour bordered")
+  .style("fill", colors[0]);
+  heatMap.transition().duration(1000)
+  .style("fill", function(d){return colorScale(d.commits);});
 });
