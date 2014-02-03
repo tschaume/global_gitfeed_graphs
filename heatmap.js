@@ -23,16 +23,16 @@ d3.json("data.json", function(error, json) {
   });
   console.log(commits);
   // generate data array of objects {day,hour,value}
-  var data = new Array(days.length*hours.length);
+  var data = [];
   for (var i = 0; i < days.length; i++) {
     for (var j = 0; j < hours.length; j++) {
       var key = JSON.stringify({ day: days[i], hour: hours[j]})
-      data.push({ day: days[i], hour: hours[j], commits: commits[key] })
+      data.push({ day: days[i], hour: hours[j], commits: (commits[key] || 0)})
     }
   }
   console.log(data)
-  //var maxCommits = d3.max(data, function(d){return d.value;})
-  //console.log(maxCommits)
+  var maxCommits = d3.max(data, function(d){return d.commits;})
+  console.log(maxCommits)
   //var colorScale = d3.scale.quantile()
   //.domain([0, buckets-1, maxCommits]).range(colors)
   //var svg = d3.select("#chart").append("svg")
