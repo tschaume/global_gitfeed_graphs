@@ -9,15 +9,54 @@ var days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 var hours = new Array(24);
 for (var j = 0; j < 24; j++) { hours[j] = j + "h"; }
 
-d3.json("data.json", function(error, json) {
-  if (error) return console.warn(error);
-  // extract data of interest from json api response
-  var raw_data = new Array(json._items.length);
-  json._items.forEach(function(item) {
-    var dt = new Date(item.datetime)
-    raw_data.push({ day: dt.getDay(), hour: dt.getHours() })
+// svg
+var svg = d3.select("#chart").append("svg")
+.attr("width", width + margin.left + margin.right)
+.attr("height", height + margin.top + margin.bottom)
+.append("g")
+.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+// day labels
+var dayLabels = svg.selectAll(".dayLabel")
+.data(days).enter().append("text")
+.text(function(d){return d;}).attr("x",0)
+.attr("y", function(d,i){return i*gridSize;})
+.style("text-anchor", "end")
+.attr("transform", "translate(-6," + gridSize / 1.5 + ")")
+.attr("class", "dayLabel mono");
+// hour labels
+var hourLabels = svg.selectAll(".hourLabel")
+.data(hours).enter().append("text")
+.text(function(d){return d;}).attr("y",0)
+.attr("x", function(d,i){return i*gridSize;})
+.style("text-anchor", "middle")
+.attr("transform", "translate(" + gridSize / 2 + ", -6)")
+.attr("class", "hourLabel mono");
+
+// async json api imports
+var endpoint = "http://api.the-huck.com/gitcommits"
+var url = endpoint + "?page=5"
+var last_page;
+d3.json(url, function(json) {
+  last_page = Number(json._links.last.href.split('=')[1]);
+  var q = queue();
+  for (var p = 1; p <= last_page; p++) {
+    url = endpoint
+    if (p > 1) { url += "?page=" + p; }
+    q = q.defer(d3.json, url)
+  }
+  q.awaitAll(ready)
+});
+
+// function called in awaitCall after all json api requests done
+function ready(error, jsons) {
+  // extract data of interest from json api responses
+  var raw_data = [];
+  jsons.forEach(function(json) {
+    json._items.forEach(function(item) {
+      var dt = new Date(item.datetime)
+      raw_data.push({ day: dt.getDay(), hour: dt.getHours() })
+    });
   });
-  console.log(raw_data)
   // sort and count commits into days/hours
   var commits = {}
   raw_data.forEach(function(obj) {
@@ -34,30 +73,9 @@ d3.json("data.json", function(error, json) {
     }
   }
   console.log(data)
-  // colorscale and svg
+  // colorscale
   var maxCommits = d3.max(data, function(d){return d.commits;})
   var colorScale = d3.scale.quantile().domain([0, maxCommits]).range(colors)
-  var svg = d3.select("#chart").append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-  // day labels
-  var dayLabels = svg.selectAll(".dayLabel")
-  .data(days).enter().append("text")
-  .text(function(d){return d;}).attr("x",0)
-  .attr("y", function(d,i){return i*gridSize;})
-  .style("text-anchor", "end")
-  .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
-  .attr("class", "dayLabel mono");
-  // hour labels
-  var hourLabels = svg.selectAll(".hourLabel")
-  .data(hours).enter().append("text")
-  .text(function(d){return d;}).attr("y",0)
-  .attr("x", function(d,i){return i*gridSize;})
-  .style("text-anchor", "middle")
-  .attr("transform", "translate(" + gridSize / 2 + ", -6)")
-  .attr("class", "hourLabel mono");
   // heatmap
   var heatMap = svg.selectAll(".hour").data(data).enter().append("rect")
   .attr("x", function(d){return d.hour*gridSize;})
@@ -80,4 +98,4 @@ d3.json("data.json", function(error, json) {
   .text(function(d) { return "≥ " + Math.round(d); })
   .attr("x", function(d, i) { return legendElWidth * i; })
   .attr("y", height + gridSize);
-});
+}
