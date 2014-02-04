@@ -38,7 +38,7 @@ var url = endpoint + "?page=5"
 var last_page;
 d3.json(url, function(json) {
   last_page = Number(json._links.last.href.split('=')[1]);
-  var q = queue();
+  var q = queue(1); // run serially to preserve date order
   for (var p = 1; p <= last_page; p++) {
     url = endpoint
     if (p > 1) { url += "?page=" + p; }
