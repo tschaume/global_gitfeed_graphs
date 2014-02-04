@@ -1,4 +1,4 @@
-var margin = { top: 50, right: 0, bottom: 100, left: 30 };
+var margin = { top: 30, right: 0, bottom: 50, left: 30 };
 var width = 960 - margin.left - margin.right;
 var height = 430 - margin.top - margin.bottom;
 var gridSize = Math.floor(width/24);
@@ -51,9 +51,11 @@ d3.json(url, function(json) {
 function ready(error, jsons) {
   // extract data of interest from json api responses
   var raw_data = [];
+  var dates = [];
   jsons.forEach(function(json) {
     json._items.forEach(function(item) {
       var dt = new Date(item.datetime)
+      dates.push(dt);
       raw_data.push({ day: dt.getDay(), hour: dt.getHours() })
     });
   });
@@ -73,9 +75,11 @@ function ready(error, jsons) {
     }
   }
   console.log(data)
-  // colorscale
+  // colorscale, number of commits & timeframe
   var maxCommits = d3.max(data, function(d){return d.commits;})
   var colorScale = d3.scale.quantile().domain([0, maxCommits]).range(colors)
+  var nrCommits = d3.sum(data, function(d){return d.commits;})
+  var timeframe = d3.extent(dates)
   // heatmap
   var heatMap = svg.selectAll(".hour").data(data).enter().append("rect")
   .attr("x", function(d){return d.hour*gridSize;})
@@ -83,7 +87,7 @@ function ready(error, jsons) {
   .attr("width", gridSize).attr("height", gridSize)
   .attr("rx", 4).attr("ry", 4).attr("class", "hour bordered")
   .style("fill", colors[0])
-  .transition().duration(1000)
+  .transition().duration(1200)
   .style("fill", function(d){return colorScale(d.commits);});
   // legend
   var legend_data = [0].concat(colorScale.quantiles())
@@ -98,4 +102,10 @@ function ready(error, jsons) {
   .text(function(d) { return "≥ " + Math.round(d); })
   .attr("x", function(d, i) { return legendElWidth * i; })
   .attr("y", height + gridSize);
+  legend.append("text").attr("class", "mono")
+  .text("total number of commits: " + nrCommits)
+  .attr("x", 0).attr("y", height - gridSize/2)
+  legend.append("text").attr("class", "mono")
+  .text("timeframe: " + timeframe[0] + " - " + timeframe[1])
+  .attr("x", 0).attr("y", height - gridSize)
 }
