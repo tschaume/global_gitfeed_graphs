@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tschaume's Graphs</title>
     <style>
       rect.bordered {
         stroke: #C0C0C0;
@@ -13,12 +17,26 @@
         fill: #aaa;
       }
     </style>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <script src="http://d3js.org/d3.v3.js"></script>
     <script src="http://d3js.org/queue.v1.min.js"></script>
     <script src="colorbrewer.js"></script>
   </head>
   <body>
-    <div id="chart"></div>
-    <script src="heatmap.js"> </script>
+    <div class="container">
+      <div class="page-header">
+        <h1>tschaume's Graphs <small>global git activity</small></h1>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Heatmap of Git Commits</h3>
+        </div>
+        <div class="panel-body" id="chart"></div>
+      </div>
+      <script src="heatmap.js"> </script>
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
   </body>
 </html>
