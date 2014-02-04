@@ -34,51 +34,19 @@
   <body>
     <div class="container-non-responsive" width: 970px !important;>
       <div class="page-header">
-        <h1>tschaume's Graphs <small>global git activity</small></h1>
+        <h1>tschaume's Global Git Activity <small>graphs w/ d3.js & Eve RESTful API</small></h1>
       </div>
-      <div class="panel-group" id="accordion">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                Heatmap of Git Commits
-              </a>
-            </h4>
-          </div>
-          <div id="collapseOne" class="panel-collapse collapse">
-            <div class="panel-body" id="chart"></div>
-          </div>
-        </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                Calendar of Git Commits
-              </a>
-            </h4>
-          </div>
-          <div id="collapseTwo" class="panel-collapse collapse">
-            <div class="panel-body">
-              place figure here
-            </div>
-          </div>
-        </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                History of Git Commits
-              </a>
-            </h4>
-          </div>
-          <div id="collapseThree" class="panel-collapse collapse">
-            <div class="panel-body">
-              place history here
-            </div>
-          </div>
-        </div>
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#heatmap" data-toggle="tab">HeatMap</a></li>
+        <li><a href="#calendar" data-toggle="tab">Calendar</a></li>
+        <li><a href="#history" data-toggle="tab">History</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="heatmap"><div id="chart"></div></div>
+        <div class="tab-pane fade" id="calendar">...</div>
+        <div class="tab-pane fade" id="history">...</div>
       </div>
-      <script src="heatmap.js"> </script>
     </div>
+    <script src="heatmap.js"> </script>
   </body>
 </html>
