@@ -51,14 +51,35 @@
   <body>
     <div class="container-non-responsive" width: 970px !important;>
       <div class="page-header">
-        <h1>tschaume's Global Git Activity <small>graphs w/ d3.js & Eve RESTful API</small></h1>
+        <h1>
+          tschaume's Global Git Activity
+          <small>graphs w/ d3.js & Eve RESTful API</small>
+        </h1>
+      </div>
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h5 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse">
+                Description
+              </a>
+            </h5>
+          </div>
+          <div id="collapse" class="panel-collapse collapse">
+            <div class="panel-body">
+              prepare text for HN submission ...
+            </div>
+          </div>
+        </div>
       </div>
       <ul class="nav nav-tabs">
         <li class="active"><a href="#heatmap" data-toggle="tab">HeatMap</a></li>
         <li><a href="#lines" data-toggle="tab">Lines</a></li>
         <li><a href="#calendar" data-toggle="tab">Calendar</a></li>
         <li><a href="#history" data-toggle="tab">History</a></li>
+        <li><a href="#projects" data-toggle="tab">Projects</a></li>
         <!-- Number of Projects over time(first commit) -->
+        <!-- Punchcard for each Project -->
       </ul>
       <div class="tab-content">
         <div class="tab-pane fade in active" id="heatmap"><div id="chart"></div></div>
