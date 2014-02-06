@@ -1,7 +1,8 @@
-function readyHistory(error, json) { // plural for async!
+// NOTE: change jsons -> json & comment jsons.forEach for single file test
+function readyHistory(error, jsons) {
   if (error) return console.log(error);
   var aaData = [];
-  //jsons.forEach(function(json) {
+  jsons.forEach(function(json) {
     json._items.forEach(function(item) {
       var date = new Date(item.datetime)
       var hash = item.sha1.substring(0,6)
@@ -17,7 +18,7 @@ function readyHistory(error, json) { // plural for async!
       ]
       aaData.push(commit);
     });
-  //});
+  });
   $(document).ready(function() {
     $('#table').dataTable({"aaData": aaData});
   });
