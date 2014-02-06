@@ -18,4 +18,7 @@ function readyHistory(error, json) { // plural for async!
       aaData.push(commit);
     });
   //});
+  $(document).ready(function() {
+    $('#table').dataTable({"aaData": aaData});
+  });
 }
