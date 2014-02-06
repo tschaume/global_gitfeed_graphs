@@ -1,21 +1,13 @@
-function readyLines(error, jsons) {
+function readyLines(error, json) {
   var data = [];
   var lines = 0;
-  // TODO: ordering!
-  jsons.forEach(function(json) {
-    try {
-      json._items.forEach(function(item) {
-        if (item.sha1 == undefined) throw BreakException; // catch projects json
-        var dt = new Date(item.datetime)
-        if (item.lines > 2000) { console.log(item); }
-        else {
-          lines += item.lines;
-          var obj = { date: dt, lines: lines };
-          data.push(obj);
-        }
-      });
-    } catch (e) {
-      if (e != BreakException) throw e;
+  json._items.forEach(function(item) {// TODO: ordering!
+    var dt = new Date(item.datetime)
+    if (item.lines > 2000) { console.log(item); }
+    else {
+      lines += item.lines;
+      var obj = { date: dt, lines: lines };
+      data.push(obj);
     }
   });
   // defs

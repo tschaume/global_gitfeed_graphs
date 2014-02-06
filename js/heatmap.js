@@ -1,18 +1,11 @@
-function readyHeatmap(error, jsons) {
+function readyHeatmap(error, json) {
   // extract data of interest from json api responses
   var raw_data = [];
   var dates = [];
-  jsons.forEach(function(json) {
-    try {
-      json._items.forEach(function(item) {
-        if (item.sha1 == undefined) throw BreakException; // catch projects json
-        var dt = new Date(item.datetime)
-        dates.push(dt);
-        raw_data.push({ day: dt.getDay(), hour: dt.getHours() })
-      });
-    } catch (e) {
-      if (e != BreakException) throw e;
-    }
+  json._items.forEach(function(item) {
+    var dt = new Date(item.datetime)
+    dates.push(dt);
+    raw_data.push({ day: dt.getDay(), hour: dt.getHours() })
   });
   // sort and count commits into days/hours
   var commits = {}
