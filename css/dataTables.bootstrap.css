@@ -27,8 +27,7 @@ div.dataTables_paginate {
 }
 
 div.dataTables_paginate ul.pagination {
-	margin: 2px 0;
-	white-space: nowrap;
+	margin: 2px;
 }
 
 table.dataTable,
@@ -81,7 +80,6 @@ div.dataTables_scrollHead table thead tr:last-child td:first-child {
 
 div.dataTables_scrollBody table {
 	border-top: none;
-	margin-top: 0 !important;
 	margin-bottom: 0 !important;
 }
 
@@ -91,7 +89,6 @@ div.dataTables_scrollBody tbody tr:first-child td {
 }
 
 div.dataTables_scrollFoot table {
-	margin-top: 0 !important;
 	border-top: none;
 }
 
@@ -220,4 +217,3 @@ div.DTFC_RightFootWrapper table,
 div.DTFC_LeftFootWrapper table {
     border-top: none;
 }
-
