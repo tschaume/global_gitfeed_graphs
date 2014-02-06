@@ -1,0 +1,522 @@
+{
+  "_items": [
+    {
+      "deletions": 164, 
+      "files": 5, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "676f1c7d0f6674b340a7327459b88aefdfd64e24", 
+      "insertions": 164, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 328, 
+      "datetime": "Sat, 02 Jun 2012 01:36:30 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "e61ad83f8faaa11a09b6cfe87da1a4a8d02d88c8", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbcd", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "folder renamed: 'program' ->' programs', createMakeFileInsert.pl updated", 
+      "_id": "52ee222efed003544c6bdbcd"
+    }, 
+    {
+      "deletions": 3, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "811b57e8ec969686a167fe16427bc95dc2542b11", 
+      "insertions": 4, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 7, 
+      "datetime": "Sat, 02 Jun 2012 02:06:40 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "e2d47a6db6dd8e3daf8f064a5b6f803d7f5d35da", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbcc", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "using find to determine subdir's instead of ls, introduced globprogs array", 
+      "_id": "52ee222efed003544c6bdbcc"
+    }, 
+    {
+      "deletions": 1, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "3d626f11a40d2c146fd0c36d1c2a5f4376a54fe6", 
+      "insertions": 19, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 20, 
+      "datetime": "Sat, 02 Jun 2012 02:57:01 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "5e449348f4d20c553496791f63f9c8ae744dfdae", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbcb", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "updated updateMakeFileAm.sh to compile global programs", 
+      "_id": "52ee222efed003544c6bdbcb"
+    }, 
+    {
+      "deletions": 1, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "7f0aa21d62de55c5c962df8b39e5c44c69afa478", 
+      "insertions": 1, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 2, 
+      "datetime": "Sat, 02 Jun 2012 03:23:09 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "9b9a4b0321fd0041f26331e85a6679ca1d2f9715", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbca", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "added -lPhysics -lEG -lEGPythia6 for global programs (needs better solution)", 
+      "_id": "52ee222efed003544c6bdbca"
+    }, 
+    {
+      "deletions": 0, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "b009843fee497bdd323089d5c844a479a1eed0b6", 
+      "insertions": 170, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 170, 
+      "datetime": "Sat, 02 Jun 2012 03:26:38 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "2cc96765e20dfa829cee375cfadce5b7dfbd93c1", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbc9", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "added src/hmerge.cc as example for 'global program'", 
+      "_id": "52ee222efed003544c6bdbc9"
+    }, 
+    {
+      "deletions": 18, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "c382969db4f8ffc038c6240c6be0ddd7288cbc4a", 
+      "insertions": 11, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 29, 
+      "datetime": "Sat, 02 Jun 2012 03:29:20 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "43e7f61875d34712d8b94301baf4de113afb117c", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbc8", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "updated tree structure in README file", 
+      "_id": "52ee222efed003544c6bdbc8"
+    }, 
+    {
+      "deletions": 0, 
+      "files": 2, 
+      "updated": "Sun, 02 Feb 2014 10:41:46 GMT", 
+      "sha1": "50750c65b96710981933d2c67432f0fcc1ec6b5f", 
+      "insertions": 147, 
+      "created": "Sun, 02 Feb 2014 10:41:46 GMT", 
+      "lines": 147, 
+      "datetime": "Sat, 02 Jun 2012 21:55:37 GMT", 
+      "project": "52ee20e7fed003544c6bd4cb", 
+      "etag": "cca98cc1b3fa5b45b48d64270686e0cb03ad2430", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee20eafed003544c6bd4d9", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "Merged Commit: transition to TemplateAnalysis scheme", 
+      "_id": "52ee20eafed003544c6bd4d9"
+    }, 
+    {
+      "deletions": 0, 
+      "files": 3, 
+      "updated": "Sun, 02 Feb 2014 10:41:51 GMT", 
+      "sha1": "f9bb7bf0dbdc1d702860339884d30f32368a74e7", 
+      "insertions": 78, 
+      "created": "Sun, 02 Feb 2014 10:41:51 GMT", 
+      "lines": 78, 
+      "datetime": "Sat, 02 Jun 2012 21:55:37 GMT", 
+      "project": "52ee20edfed003544c6bd4da", 
+      "etag": "b7afd3193b1dc5a509f6dc79f6ab8f4d38cf8fe6", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee20effed003544c6bd4e0", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "Merged Commit: transition to TemplateAnalysis scheme", 
+      "_id": "52ee20effed003544c6bd4e0"
+    }, 
+    {
+      "deletions": 0, 
+      "files": 2, 
+      "updated": "Sun, 02 Feb 2014 10:41:56 GMT", 
+      "sha1": "2baab9a723d9b6b1ab843b8f3d349daeb49a7b83", 
+      "insertions": 1632, 
+      "created": "Sun, 02 Feb 2014 10:41:56 GMT", 
+      "lines": 1632, 
+      "datetime": "Sat, 02 Jun 2012 21:55:37 GMT", 
+      "project": "52ee20f2fed003544c6bd4e1", 
+      "etag": "3a86a087285dbe8a3e7501c5cca985b18db290d5", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee20f4fed003544c6bd4e7", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "Merged Commit: transition to TemplateAnalysis scheme", 
+      "_id": "52ee20f4fed003544c6bd4e7"
+    }, 
+    {
+      "deletions": 0, 
+      "files": 0, 
+      "updated": "Sun, 02 Feb 2014 10:42:14 GMT", 
+      "sha1": "5fa1a62600fbb5fd4a2a3256dd4f69c97ad3a625", 
+      "insertions": 0, 
+      "created": "Sun, 02 Feb 2014 10:42:14 GMT", 
+      "lines": 0, 
+      "datetime": "Tue, 05 Jun 2012 00:20:07 GMT", 
+      "project": "52ee2104fed003544c6bd501", 
+      "etag": "a58e14c19bb772f3f7cd796f5b951bac8e4ea0e8", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee2106fed003544c6bd50d", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "Merge commit '967e5e08092645833ad21195c1fdc47c6be4b0e6' as 'src/MyCore/StBadRdosDb'", 
+      "_id": "52ee2106fed003544c6bd50d"
+    }, 
+    {
+      "deletions": 1, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "b6a98cc825f4fec12c45bfe6a2f5ed9e79783380", 
+      "insertions": 1, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 2, 
+      "datetime": "Tue, 05 Jun 2012 22:39:15 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "63503afa5e07a714547d8dccc2fe68a76a04248b", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbc7", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "removed '+' from pragma link definition in LinkDef's", 
+      "_id": "52ee222efed003544c6bdbc7"
+    }, 
+    {
+      "deletions": 16, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "53b3c050d0d4853543536333898e5f61872c0b3b", 
+      "insertions": 19, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 35, 
+      "datetime": "Wed, 06 Jun 2012 00:34:38 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "d2cfcd1d646e69182bb5b8603c9fd4e2dada56a8", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbc5", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "started modifying README for release version", 
+      "_id": "52ee222efed003544c6bdbc5"
+    }, 
+    {
+      "deletions": 1, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "5e4c54a3598c6909db5866512e166225ddda8745", 
+      "insertions": 1, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 2, 
+      "datetime": "Wed, 06 Jun 2012 00:34:38 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "4295f4ccbad49a956b4e4d796bdca38ff5bf2342", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbc6", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "bumped version number into configure.ac", 
+      "_id": "52ee222efed003544c6bdbc6"
+    }, 
+    {
+      "deletions": 15, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "a858e8f74661958d2cb2a591ba3d0565b6bb4f26", 
+      "insertions": 16, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 31, 
+      "datetime": "Wed, 06 Jun 2012 00:43:32 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "4672fddc3bfad5692b5b17fff46b1ee7e756eeb4", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbc4", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "moved ENV check behind option parsing to fix 'kon -h'", 
+      "_id": "52ee222efed003544c6bdbc4"
+    }, 
+    {
+      "deletions": 58, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "f05158b255d1cf315f43d942c0a00734a0d0a635", 
+      "insertions": 0, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 58, 
+      "datetime": "Wed, 06 Jun 2012 00:59:40 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "c7f95007d93ffa4f60bbb7c5a61c4bd68f707944", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbc3", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "removed obsolete autogen/setup.sh", 
+      "_id": "52ee222efed003544c6bdbc3"
+    }, 
+    {
+      "deletions": 14, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "c2e1485e17b40bf35f9c1ea3dbdc5860501de178", 
+      "insertions": 14, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 28, 
+      "datetime": "Wed, 06 Jun 2012 01:01:41 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "5915f82624bb7476c208e909884b0083154d8601", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbc2", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "moved ENV check behind clean up to fix 'kon -c'", 
+      "_id": "52ee222efed003544c6bdbc2"
+    }, 
+    {
+      "deletions": 3, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "f195b9ee4c1db5381fccd51f16011c28ce02932d", 
+      "insertions": 3, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 6, 
+      "datetime": "Wed, 06 Jun 2012 01:18:20 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "458499f3010f00bc80749e54d444534c7497ad49", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbc1", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "fixed ENV check in kon not to be solely based on bashrc", 
+      "_id": "52ee222efed003544c6bdbc1"
+    }, 
+    {
+      "deletions": 10, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "bce7be30c8fda09fb0f77b5674e992122a8b11c2", 
+      "insertions": 19, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 29, 
+      "datetime": "Wed, 06 Jun 2012 01:20:59 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "d636eb2ce94b517c3d9879203463e3283929048e", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbc0", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "finished README for version 0.1", 
+      "_id": "52ee222efed003544c6bdbc0"
+    }, 
+    {
+      "deletions": 188, 
+      "files": 6, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "0c9da75b4805a97844764e23c88b043d1da708be", 
+      "insertions": 85, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 273, 
+      "datetime": "Wed, 06 Jun 2012 01:21:38 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "d64b49739c26da079b5e3894c7b28e9509a3f6ae", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbbf", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "Merge 'release/v0.1' -- first finalized release of TemplateAnalysis", 
+      "_id": "52ee222efed003544c6bdbbf"
+    }, 
+    {
+      "deletions": 91, 
+      "files": 4, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "5ac9adeb473923a09c9c12baf5c31af59d39834b", 
+      "insertions": 46, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 137, 
+      "datetime": "Wed, 06 Jun 2012 01:23:01 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "01b885d2205eb52d7b365377a7cbec9781e6bcb0", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbbe", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "Merge branch 'release/v0.1' into develop", 
+      "_id": "52ee222efed003544c6bdbbe"
+    }, 
+    {
+      "deletions": 0, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "4fbf84129199b64a82cbf1a7cbf06041b45cda69", 
+      "insertions": 2, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 2, 
+      "datetime": "Wed, 06 Jun 2012 02:00:00 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "22d3cbe51088f086c4c790fe81781fd6e25ea227", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbbd", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "added .gitattributes to control git-archive", 
+      "_id": "52ee222efed003544c6bdbbd"
+    }, 
+    {
+      "deletions": 0, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "3185587429fcb264413d8eae95ea4a6a77d7c1b7", 
+      "insertions": 2, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 2, 
+      "datetime": "Wed, 06 Jun 2012 02:01:31 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "ad048fab7757bc169cef70f14f579d597e90a2e4", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbbc", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "added .git* to .gitattributes to be ignored for export", 
+      "_id": "52ee222efed003544c6bdbbc"
+    }, 
+    {
+      "deletions": 0, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "1b4155b75cec4280353cf48926f17c116c7fe1fa", 
+      "insertions": 4, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 4, 
+      "datetime": "Wed, 06 Jun 2012 02:02:23 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "861a04ebdb10c0af74dad0287a9204596a7eacf7", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbbb", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "Merge 'feature/git-archive' into develop -- export-ignore for archive", 
+      "_id": "52ee222efed003544c6bdbbb"
+    }, 
+    {
+      "deletions": 2, 
+      "files": 2, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "8ba4074dfc351ffc8bae53df1f78fe52f4cc36c8", 
+      "insertions": 2, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 4, 
+      "datetime": "Wed, 06 Jun 2012 02:11:22 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "7815d39acd1c5f1d8ff57c1520da5427edb1ea54", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbba", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "dumped version number in configure.ac & README", 
+      "_id": "52ee222efed003544c6bdbba"
+    }, 
+    {
+      "deletions": 1, 
+      "files": 1, 
+      "updated": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "sha1": "cbb2708aa7738652139a3b74a5563e1057d146a8", 
+      "insertions": 28, 
+      "created": "Sun, 02 Feb 2014 10:47:10 GMT", 
+      "lines": 29, 
+      "datetime": "Wed, 06 Jun 2012 02:22:22 GMT", 
+      "project": "52ee2227fed003544c6bdb73", 
+      "etag": "f9b15aa320398997b84d34951ecf86df07ea5d78", 
+      "_links": {
+        "self": {
+          "href": "api.the-huck.com/gitcommits/52ee222efed003544c6bdbb9", 
+          "title": "Gitcommit"
+        }
+      }, 
+      "message": "added git-archive section to README", 
+      "_id": "52ee222efed003544c6bdbb9"
+    }
+  ], 
+  "_links": {
+    "self": {
+      "href": "api.the-huck.com/gitcommits", 
+      "title": "gitcommits"
+    }, 
+    "last": {
+      "href": "api.the-huck.com/gitcommits?page=72", 
+      "title": "last page"
+    }, 
+    "parent": {
+      "href": "api.the-huck.com", 
+      "title": "home"
+    }, 
+    "next": {
+      "href": "api.the-huck.com/gitcommits?page=2", 
+      "title": "next page"
+    }
+  }
+}
