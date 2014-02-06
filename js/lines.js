@@ -3,15 +3,20 @@ function readyLines(error, jsons) {
   var lines = 0;
   // TODO: ordering!
   jsons.forEach(function(json) {
-    json._items.forEach(function(item) {
-      var dt = new Date(item.datetime)
-      if (item.lines > 2000) { console.log(item); }
-      else {
-        lines += item.lines;
-        var obj = { date: dt, lines: lines };
-        data.push(obj);
-      }
-    });
+    try {
+      json._items.forEach(function(item) {
+        if (item.sha1 == undefined) throw BreakException; // catch projects json
+        var dt = new Date(item.datetime)
+        if (item.lines > 2000) { console.log(item); }
+        else {
+          lines += item.lines;
+          var obj = { date: dt, lines: lines };
+          data.push(obj);
+        }
+      });
+    } catch (e) {
+      if (e != BreakException) throw e;
+    }
   });
   // defs
   var margin = { top: 30, right: 0, bottom: 50, left: 100 };

@@ -1,3 +1,6 @@
+// global BreakException to catch projects json
+var BreakException= {};
+
 // test single json input file
 //d3.json("data/gitcommits0.json", readyHistory);
 
@@ -9,8 +12,10 @@ function readyAll(error, jsons) {
   readyHistory(error, jsons);
 }
 
-// init queue
+// init queue and get projects
 var q = queue()
+var projects = "data/gitprojects.json"
+q = q.defer(d3.json, projects)
 
 // test multiple json input files
 var url = "data/gitcommits"
@@ -20,6 +25,7 @@ for (var p = 0; p < 3; p++) {
 }
 
 // async json api imports
+// TODO: get projects
 //var url = "http://api.the-huck.com/gitcommits"
 ////TODO: last_page from first api request with endpoint = url
 ////var last_page = Number(json._links.last.href.split('=')[1]);
