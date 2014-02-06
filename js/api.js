@@ -6,6 +6,7 @@ function readyAll(error, json) {
   readyHistory(error, json);
 }
 
-// test single json input file
-// TODO: take live with api.the-huck.com
-d3.json("data/gitcommits.json", readyAll);
+// api call
+// endpoint = "data/gitcommits.json" // test
+endpoint = "http://api.the-huck.com/gitcommits" // production
+d3.json(endpoint, readyAll);
