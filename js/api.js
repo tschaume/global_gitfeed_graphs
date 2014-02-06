@@ -1,5 +1,5 @@
 // test single json input file
-//d3.json("data/data_min0.json", readyHistory);
+//d3.json("data/gitcommits0.json", readyHistory);
 
 // callback function to run all graphs
 function readyAll(error, jsons) {
@@ -13,7 +13,7 @@ function readyAll(error, jsons) {
 var q = queue()
 
 // test multiple json input files
-var url = "data/data_min"
+var url = "data/gitcommits"
 for (var p = 0; p < 3; p++) {
   var endpoint = url + p + ".json"
   q = q.defer(d3.json, endpoint)
