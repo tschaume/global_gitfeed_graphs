@@ -1,19 +1,33 @@
-// TEST: d3.json("data/data_min.json", readyHistory);
+// test single json input file
+//d3.json("data/data_min0.json", readyHistory);
+
+// callback function to run all graphs
+function readyAll(error, jsons) {
+  if (error) return console.log(error);
+  readyHeatmap(error, jsons);
+  readyLines(error, jsons); //TODO: date sorting?
+  readyHistory(error, jsons);
+}
+
+// init queue
+var q = queue()
+
+// test multiple json input files
+var url = "data/data_min"
+for (var p = 0; p < 3; p++) {
+  var endpoint = url + p + ".json"
+  q = q.defer(d3.json, endpoint)
+}
+
 // async json api imports
-var endpoint = "http://api.the-huck.com/gitcommits"
-var url = endpoint + "?page=5"
-var last_page;
-d3.json(url, function(error, json) { // TODO: check
-  if (error) return console.warn(error);
-  last_page = Number(json._links.last.href.split('=')[1]);
-  var q = queue();
-  for (var p = 1; p <= last_page; p++) {
-    url = endpoint
-    if (p > 1) { url += "?page=" + p; }
-    q = q.defer(d3.json, url) // TODO: check (double d3.json?)
-  }
-  //TODO: date sorting?
-  q.awaitAll(readyHeatmap)
-  q.awaitAll(readyLines)
-  q.awaitAll(readyHistory)
-});
+//var url = "http://api.the-huck.com/gitcommits"
+////TODO: last_page from first api request with endpoint = url
+////var last_page = Number(json._links.last.href.split('=')[1]);
+//var last_page = 10;
+//for (var p = 2; p <= last_page; p++) {
+//  endpoint = url + "?page=" + p;
+//  q = q.defer(d3.json, endpoint)
+//}
+
+// call all graphs after requests finished
+q.awaitAll(readyAll)
