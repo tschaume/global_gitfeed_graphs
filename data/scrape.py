@@ -1,19 +1,9 @@
 #!/usr/bin/env python
 
-import requests, json
-
-for endpoint in ['gitprojects', 'gitcommits']:
-  DATA = None
-  URL = 'http://api.the-huck.com/%s' % endpoint
-  while True:
-    print URL
-    r = requests.get(URL)
-    print r.status_code
-    data = r.json()
-    if DATA is None: DATA = data
-    else: DATA['_items'] += data.get('_items')
-    next = data.get('_links').get('next')
-    if next is not None: URL = ''.join(['http://', next.get('href')])
-    else: break
-  with open('data/%s.json' % endpoint, 'w') as outfile:
-    json.dump(DATA, outfile, indent=2)
+import requests, json, re, sys
+endpoint = "http://api.the-huck.com/gitcommits"
+headers = {'Accept': 'application/json', 'Pragma': 'no-cache'}
+r = requests.get(endpoint, headers=headers).json()
+print "#commits = ", len(r["_items"])
+with open('data/gitcommits.json', 'w') as outfile:
+  json.dump(r, outfile, indent=2)
