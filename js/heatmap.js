@@ -47,7 +47,7 @@ function readyHeatmap(error, jsons) {
   .attr("y", function(d,i){return i*gridSize;})
   .style("text-anchor", "end")
   .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
-  .attr("class", "dayLabel mono");
+  .attr("class", "dayLabel");
   // hour labels
   var hourLabels = svg.selectAll(".hourLabel")
   .data(hours).enter().append("text")
@@ -55,7 +55,7 @@ function readyHeatmap(error, jsons) {
   .attr("x", function(d,i){return i*gridSize;})
   .style("text-anchor", "middle")
   .attr("transform", "translate(" + gridSize / 2 + ", -6)")
-  .attr("class", "hourLabel mono");
+  .attr("class", "hourLabel");
   // colorscale, number of commits & timeframe
   var maxCommits = d3.max(data, function(d){return d.commits;})
   var colorScale = d3.scale.quantile().domain([0, maxCommits]).range(colors)
@@ -79,14 +79,14 @@ function readyHeatmap(error, jsons) {
   .attr("x", function(d,i){return legendElWidth*i;})
   .attr("y", height).attr("width", legendElWidth).attr("height", gridSize/2)
   .style("fill", function(d,i){return colors[i];});
-  legend.append("text").attr("class", "mono")
+  legend.append("text")
   .text(function(d) { return "≥ " + Math.round(d); })
   .attr("x", function(d, i) { return legendElWidth * i; })
   .attr("y", height + gridSize);
-  legend.append("text").attr("class", "mono")
+  legend.append("text")
   .text("total number of commits: " + nrCommits)
   .attr("x", 0).attr("y", height - gridSize/2)
-  legend.append("text").attr("class", "mono")
+  legend.append("text")
   .text("timeframe: " + timeframe[0] + " - " + timeframe[1])
   .attr("x", 0).attr("y", height - gridSize)
 }
